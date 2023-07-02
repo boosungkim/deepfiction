@@ -14,10 +14,30 @@ const CreateStory = () => {
   });
 
   const [generatingStory, setGeneratingStory] = useState(false);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
-  const generateStory = () => {
+  const generateStory = async () => {
+    if(form.prompt){
+      try{
+        setGeneratingStory(true);
+        const response = await fetch('http://localhost:8080/api/v1/dalle',{
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ prompt: form.prompt, }),
+        });
 
+        const data = await response.json();
+        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+      } catch(error){
+        alert(error)
+      } finally{
+        setGeneratingStory(false);
+      } 
+    } else {
+      alert("please enter a prompt")
+    }
   }
 
   const handleSubmit = () => {
