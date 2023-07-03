@@ -16,28 +16,30 @@ const Home = () => {
   const [allStories, setAllStories] = useState(null);
   const [searchText, setSearchText] = useState('');
 
-  useEffect(() => {
-    const fetchStories = async () => {
-      setLoading(true);
-      try{
-        const response = await fetch('http://localhost/api/v1/story',{
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        })
+  const fetchStories = async () => {
+    setLoading(true);
+    try{
+      const response = await fetch('http://localhost:8080/api/v1/story',{
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
 
-        if(response.ok){
-          const result = await response.json();
+      if(response.ok){
+        const result = await response.json();
 
-          setAllStories(result.data.reverse());
-        }
-      } catch (error){
-
-      } finally{
-        setLoading(false);
+        setAllStories(result.data.reverse());
       }
+    } catch (error){
+      alert(error);
+    } finally{
+      setLoading(false);
     }
+  }
+
+  useEffect(() => {
+    fetchStories();
   }, []);
 
   return (
