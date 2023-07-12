@@ -18,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path ="/" element={<Home />} />
         <Route path ="/create-story" element={<CreateStory />} />
+        {/* <Route path="/story/:id" element={<Profile />} /> */}
       </Routes>
     </main>
     </BrowserRouter>
