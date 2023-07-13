@@ -44,6 +44,7 @@ const StoryPage = () => {
         <p>{story.name}</p>
         <p>{story.prompt}</p>
         <img className="w-full h-auto object-cover rounded-xl" src={story.photo} alt={prompt}/>
+        <p>{story.story}</p>
       </>
     )}
     </div>

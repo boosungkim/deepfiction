@@ -4,6 +4,7 @@ const Story = new mongoose.Schema({
     name: { type: String, required: true},
     prompt: { type: String, required: true},
     photo: { type: String, required: true},
+    story: { type: String, required: false},
 });
 
 const StorySchema = mongoose.model('Story', Story);

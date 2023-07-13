@@ -27,13 +27,14 @@ router.route('/').get(async (req,res) => {
 // create a post
 router.route('/').post(async (req,res) => {
     try{
-        const { name, prompt, photo } = req.body;
+        const { name, prompt, photo, story } = req.body;
         const photoUrl = await cloudinary.uploader.upload(photo);
 
         const newStory = await Story.create({
             name,
             prompt,
             photo: photoUrl.url,
+            story,
         })
 
         res.status(201).json({ success: true, data: newStory})

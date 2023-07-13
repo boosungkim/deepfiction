@@ -11,6 +11,7 @@ const CreateStory = () => {
     name: '',
     prompt: '',
     photo: '',
+    story:'hello',
   });
 
   const [generatingStory, setGeneratingStory] = useState(false);
