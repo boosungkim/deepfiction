@@ -11,7 +11,7 @@ const CreateStory = () => {
     name: '',
     prompt: '',
     photo: '',
-    story:'hello',
+    story: '',
   });
 
   const [generatingStory, setGeneratingStory] = useState(false);
@@ -30,7 +30,8 @@ const CreateStory = () => {
         });
 
         const data = await response.json();
-        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+        const splitStory = data.text.split("<br><br>");
+        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}`, story: splitStory });
       } catch(error){
         alert(error)
       } finally{
@@ -112,6 +113,24 @@ const CreateStory = () => {
               <img src={preview}
                     alt="preview"
                     className="w-9/12 h-9/12 object-contain opacity-40"/>
+            )}
+
+            {generatingStory && (
+              <div className="absolute inset-0 z-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] rounded-lg">
+                <Loader />
+              </div>
+            )}
+          </div>
+
+          <div className="flex flex-col gap-5">
+            {form.story ? (
+              <div>
+              {form.story.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+              </div>
+            ) : (
+              <p>Not generated</p>
             )}
 
             {generatingStory && (

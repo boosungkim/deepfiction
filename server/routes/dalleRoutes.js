@@ -35,15 +35,18 @@ router.route('/').post(async (req,res) => {
         const storyResponse = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
             messages: [
-                {"role": "system", "content": "You are a short fictional story generator. Generate short stories based on the user prompt."},
+                {"role": "system", "content": "You are a short fictional story generator. Generate short stories based on the user prompt. Add a newline for every paragraph."},
                 {role: "user", content: prompt}
             ],
         });
 
         const story = storyResponse.data.choices[0].message.content;
+        const storyWithLineBreaks = story.replace(/\n/g, '<br>');
+        // console.log(storyResponse.data.choices[0].message)
+        // console.log(storyWithLineBreaks)
 
         // Return the image and text
-        res.status(200).json({ photo: image });
+        res.status(200).json({ photo: image, text: storyWithLineBreaks });
 
     } catch (error){
         console.log(error);
