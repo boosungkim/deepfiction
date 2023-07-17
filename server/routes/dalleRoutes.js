@@ -42,8 +42,6 @@ router.route('/').post(async (req,res) => {
 
         const story = storyResponse.data.choices[0].message.content;
         const storyWithLineBreaks = story.replace(/\n/g, '<br>');
-        // console.log(storyResponse.data.choices[0].message)
-        // console.log(storyWithLineBreaks)
 
         // Return the image and text
         res.status(200).json({ photo: image, text: storyWithLineBreaks });
