@@ -36,7 +36,7 @@ Story Generation:<br>
 The frontend will be hosted on [localhost:5173](http://localhost:5173), and the server will be hosted on [localhost:8080](http://localhost:8080).
 
 ### APIs
-To run this app locally, you will need an OpenAI API, Cloudinary API, and a MongoDB API. Make sure to acquire those APIs and store them in an `.env` file. In the `.env` file, have:
+To run this app locally, you will need an OpenAI API, Cloudinary API, and a MongoDB API. Make sure to acquire those APIs and store them in an `server/.env` file. In the `.env` file, have:
 
 ```
 OPENAI_API_KEY=...
@@ -53,14 +53,14 @@ You may either use Docker or npm to install.
 
 ```bash
 cd client/
-docker build . -t image-name
-docker run -p 5173:80 -d image-name
+docker build . -t username/deepfiction-client
+docker run -p 5173:80 -d username/deepfiction-client
 ```
 
 ```bash
 cd server/
-docker build . -t image-name
-docker run -p 5173:80 -d image-name
+docker build . -t username/deepfiction-server
+docker run -p 8080:8080 -d username/deepfiction-server
 ```
 
 ### Method 2: npm
