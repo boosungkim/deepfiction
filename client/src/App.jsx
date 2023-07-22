@@ -14,9 +14,14 @@ const App = () => {
         <img src={logo} alt="logo" className="w-16 object-contain" />
       </div>
       </Link>
-      <Link to="/create-story" className="font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md">
-        Create
-      </Link>
+      <div className="flex items-center">
+        <Link to="https://boosungkim.com" className="font-inter font-medium bg-green-500 text-white px-4 py-2 rounded-md mr-4">
+          Personal Website
+        </Link>
+        <Link to="/create-story" className="font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md">
+          Create
+        </Link>
+      </div>
     </header>
     <main className="sm:p-8 px-4 py-8 w-full bg-[#f9fafe] min-h-[calc(100vh-73px)]">
       <Routes>

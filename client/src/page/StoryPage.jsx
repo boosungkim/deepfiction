@@ -34,7 +34,7 @@ const StoryPage = () => {
     <div className="max-w-3xl mx-auto p-4">
       {story && (
         <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-3xl font-semibold mb-4">Prompt: {story.prompt}</h2>
+          <h2 className="text-3xl font-semibold mb-4">{story.prompt}</h2>
           <p className="text-lg mb-4">User: {story.name}</p>
           <img className="w-full h-auto object-cover rounded-xl mb-4" src={story.photo} alt={story.prompt} />
           {story.story.map((paragraph, index) => (
