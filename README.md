@@ -21,13 +21,13 @@ Inspired by [FableForge](https://github.com/e-johnstonn/FableForge) and Tumblr, 
 <a name="screenshots"></a>
 ## Screenshots
 <p align="center">
-Homepage:
+Homepage:<br>
 <img src="images/homepage.png" width="400"/>
 <br>
-Example story:
+Example story:<br>
 <img src="images/example.png" width="400"/>
 <br>
-Story Generation:
+Story Generation:<br>
 <img src="images/generation.png" width="400"/>
 </p>
 
