@@ -21,7 +21,7 @@ const Home = () => {
   const fetchStories = async () => {
     setLoading(true);
     try{
-      const response = await fetch('http://localhost:8080/api/v1/story',{
+      const response = await fetch('https://deepfiction.onrender.com/api/v1/story',{
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
