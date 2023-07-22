@@ -15,7 +15,7 @@ FROM ubuntu
 RUN apt-get update
 RUN apt-get install nginx -y
 
-COPY --from=client /usr/src/client/dist /var/www/html/
+COPY --from=client /usr/src/client/dist/ /var/www/html/
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
