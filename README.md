@@ -10,8 +10,8 @@ A MERN stack website for sharing AI generated stories and images.
 - [Screenshots](#screenshots)
 - [Installation](#installation)
   - [APIs](#apis)
-  - [Client](#client)
-  - [Server side](#server-side)
+  - [Method 1: Docker](#method-1-docker)
+  - [Method 2: npm](#method-2-npm)
 - [License](#license)
 
 <a name="about"></a>
@@ -33,23 +33,47 @@ Story Generation:<br>
 
 <a name="installation"></a>
 ## Installation
-The frontend will be hosted on localhost:5173, and the server will be hosted on localhost:8080.
+The frontend will be hosted on [localhost:5173](http://localhost:5173), and the server will be hosted on [localhost:8080](http://localhost:8080).
 
 ### APIs
-To run this app locally, you will need an OpenAI API, Cloudinary API, and a MongoDB API. Make sure to acquire those APIs and store them in an `.env` file. The required keys are: `OPENAI_API_KEY, MONGODB_URL, CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET`.
+To run this app locally, you will need an OpenAI API, Cloudinary API, and a MongoDB API. Make sure to acquire those APIs and store them in an `.env` file. In the `.env` file, have:
 
-### Client 
-Go to the `client` folder, then terminal. Run:
+```
+OPENAI_API_KEY=...
+MONGODB_URL=...
+
+CLOUDINARY_CLOUD_NAME=...
+CLOUDINARY_API_KEY=...
+CLOUDINARY_API_SECRET=...
+```
+
+You may either use Docker or npm to install.
+
+### Method 1: Docker 
 
 ```bash
-npm install
+cd client/
+docker build . -t image-name
+docker run -p 5173:80 -d image-name
+```
+
+```bash
+cd server/
+docker build . -t image-name
+docker run -p 5173:80 -d image-name
+```
+
+### Method 2: npm
+
+```bash
+cd client
+npm install --only=production
 npm run dev
 ```
 
-### Server side
-Go to the `server` folder, then terminal. Run:
-
+Open a new terminal, then:
 ```bash
+cd server
 npm install
 npm start
 ```
