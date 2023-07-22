@@ -60,10 +60,10 @@ const Home = () => {
       <div>
         <h1 className="font-extrabold text-[#2223728] text-[32px]">Browse AI Generated Stories</h1>
         <p className="mt-2 text-[#666e75] text-[16px] max-w[500px]">Browse through a collection of short stories generated with GPT3.5 accompanied by images generated with DALL-E.</p>
-        <p className="mt-2 text-[#666e75] text-[16px] max-w[500px]">DeepFiction was created by <a href="https://boosungkim.com" className="text-[#1e90ff] hover:underline">Boosung Kim</a> as a means to practice using the MERN stack and OpenAI API. The idea was inspired from the website <a href="https://www.tumblr.com/" className="text-[#1e90ff] hover:underline">Tumblr</a>.</p>
+        <p className="mt-2 text-[#666e75] text-[16px] max-w[500px]">DeepFiction was created by <a href="https://boosungkim.com" className="text-[#1e90ff] hover:underline">Boosung Kim</a> as a means to practice using the MERN stack and OpenAI API. The idea was inspired by <a href="https://github.com/e-johnstonn/FableForge" className="text-[#1e90ff] hover:underline">FableForge</a> and <a href="https://www.tumblr.com/" className="text-[#1e90ff] hover:underline">Tumblr</a>.</p>
       </div>
 
-      <div className="mt-16">
+      <div className="mt-5">
         <FormField 
           labelName="Search for key words"
           type="text"
